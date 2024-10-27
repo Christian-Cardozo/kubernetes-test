@@ -6,9 +6,7 @@ services:
       context: ..
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    volumes:
-      - ..:/app # Monta el directorio actual en /app dentro del contenedor
+      - "3000:3000"    
     restart: unless-stopped # Reinicia el contenedor a menos que se detenga manualmente
     deploy:
       update_config:
