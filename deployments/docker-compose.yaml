@@ -3,13 +3,8 @@ version: '3.8'
 services:
   app:
     build:
-      context: ..
+      context: ..  # Asegúrate de que este directorio contenga tu Dockerfile
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"    
-    restart: unless-stopped # Reinicia el contenedor a menos que se detenga manualmente
-    deploy:
-      update_config:
-        parallelism: 1 # Despliega una actualización a la vez
-        delay: 10s # Espera 10 segundos entre cada actualización
-        failure_action: rollback # Reversa los cambios si falla
+      - "3000:3000"
+    restart: unless-stopped  # Reinicia el contenedor a menos que se detenga manualmente

@@ -39,5 +39,6 @@ jobs:
 
       - name: Deploy with Docker Compose
         run: |
-          docker-compose -f deployments/docker-compose.yaml down
-          docker-compose -f deployments/docker-compose.yaml up -d
+          cd deployments  # Cambia al directorio donde está el docker-compose.yaml
+          docker-compose down
+          docker-compose up -d --build  # Asegúrate de construir la imagen nueva
